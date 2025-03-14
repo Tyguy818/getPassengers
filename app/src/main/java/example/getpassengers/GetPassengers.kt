@@ -11,14 +11,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class GetPassengers : AppCompatActivity() {
-    private val startForResult =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { activityResult ->
-            val data = activityResult.data
-            val fName = data?.getStringExtra("first_name") ?: ""
-            val lName = data?.getStringExtra("last_name") ?: ""
-            val phoneNumber = data?.getStringExtra("phone_number") ?: ""
-            GetPassengers().findViewById<TextView>(R.id.passenger).text = "$fName $lName\n$phoneNumber"
-        }
+    private val passList: MutableList<Passenger> = mutableListOf()
+    private lateinit var passengerTextView: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -28,5 +23,10 @@ class GetPassengers : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        passengerTextView = findViewById(R.id.passengerTextView)
+    }
+    fun addPassenger(newPass: Passenger) {
+        passList.add(newPass)
+        passengerTextView.append("${newPass.toString()}\n")
     }
 }
