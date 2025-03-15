@@ -8,13 +8,86 @@
     tools:context=".GetPassengers">
 
     <TextView
-        android:id="@+id/passengerTextView"
+        android:id="@+id/header_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ACCUMULATING PASSENGER LIST"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Enter One Passenger"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <TextView
+        android:id="@+id/accum_list"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:text="ACCUMULATING PASSENGER LIST\n-----------------------------"
+        android:background="@color/grey"
+        android:textColor="@color/yellow"
+        android:layout_marginTop="16sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/back_to_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <EditText
+        android:id="@+id/first_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter First Name"
+        android:textSize="15sp"
+        android:layout_marginStart="24sp"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@id/header_text"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+    <EditText
+        android:id="@+id/last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter Last Name"
+        android:textSize="15sp"
+        android:layout_marginEnd="80sp"
+        app:layout_constraintTop_toBottomOf="@id/header_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <EditText
+        android:id="@+id/phone_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Phone Number"
+        android:textSize="15sp"
+        android:layout_marginStart="24sp"
+        android:layout_marginEnd="24sp"
+        android:inputType="phone"
+        app:layout_constraintTop_toBottomOf="@id/first_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD PASSENGER"
+        android:textSize="16sp"
+        android:onClick="enterPassenger"
+        android:layout_marginTop="20sp"
+        app:layout_constraintTop_toBottomOf="@id/phone_number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <Button
+        android:id="@+id/back_to_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RETURN LIST"
+        android:textSize="24sp"
+        android:layout_marginTop="16sp"
+        android:onClick="backToMain"
+        app:layout_constraintTop_toBottomOf="@id/add_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
