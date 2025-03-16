@@ -1,0 +1,12 @@
+App Description: Briefly explain – in  your own words - what the app does. Describe the purpose of each activity and how they work together.
+The app allows a user to enter a person's information, including first name, last name, and phone number. When the user clicks add passenger, this information
+is recorded and displayed on the current passenger list. Once the user finishes adding passengers, they can return to the original activity, which also displays
+the passengers. When the user clicks on "get passenger list" again, the list is reset and allows the user to enter a new list. The main activity's purpose is to
+show the current/most recently returned list. The GetPassengers activity's purpose is to allow a user to enter passenger information to save one list at a time
+and view the saved list on the main activity.
+
+Challenges and Solutions: Share any obstacles you encountered while building your app – one or two will do. How did you solve these issues?
+Since the directions didn't specify(unless I overlooked), I needed to implement my own way to modify the accum_list
+
+Key Learnings: Reflect on what you learned about Kotlin programming, XML layouts, and passing data between activities.
+Future Improvements: If you had more time, what might you add to this app? How would you enhance its functionality?
